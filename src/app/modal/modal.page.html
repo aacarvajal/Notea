@@ -1,0 +1,28 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+</ion-content>-->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Editar Nota</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="todo" (ngSubmit)="actualizarFormulario()">
+    <ion-item>
+      <ion-label>Tittle</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="outline" type="submit" [disabled]="!todo.valid">Actualizar</ion-button>
+  </form>
+</ion-content>

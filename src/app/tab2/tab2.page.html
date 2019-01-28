@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Añadir Notas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <!--formgroup es un binding (recoge todos los valores) se pondra el mismo nombre en el controlador-->
+    <ion-item>
+      <ion-label>Todo</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+      <!--dentro de la variable hay un apartado que se llama title (todo.title)-->
+      <!--por cada item habra un formControlName-->
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="outline" type="submit" [disabled]="!todo.valid">Guardar</ion-button>
+  </form>
+</ion-content>
